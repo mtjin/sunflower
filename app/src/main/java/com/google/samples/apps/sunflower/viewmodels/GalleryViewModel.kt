@@ -25,7 +25,19 @@ import com.google.samples.apps.sunflower.data.UnsplashRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+/*
+* @HiltViewModel 은 2021년 4월 7일 기준 안드로이드 공식문서 한글판에는 적혀있는게 없고 영문 문서에만
+* 안드로이드 클래스에 디펜던시 주입하는데 ViewModel에는 @HiltViewModel 을 사용한다고 나와있다.
+*
+Hilt 2.31에서 나왔고 기존의 ViewModel은 @Assisted와 ViewModelInject 을 사용하여 DI를 했는데
+* 이제는 @Inject와 @HiltViewModel 를 활용하면 된다.
+*@AndroidEntryPoint 어노테이션가 있는 액티비티나 프래그먼트에서 이 Hilt가 적용된 ViewModel 인스턴스를 얻으려면
+* ViewModelProvider 나 kt-extensions 를 활용한 by viewmodels() 을 활용하면 된다.
 
+* https://proandroiddev.com/whats-new-in-hilt-and-dagger-2-31-c46b7abbc64a
+
+*
+* */
 @HiltViewModel
 class GalleryViewModel @Inject constructor(
     private val repository: UnsplashRepository
