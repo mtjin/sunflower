@@ -28,7 +28,18 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.launch
+/*
+* ViewModel 관련 Hilt에서 위 사항 말고도 다음과 같이 @AssistedInject , @Assisted 라는 어노테이션도 있다.
 
+AssitedInject는 Dagger의 컴파일타임 안정성과 의존성 주입 이후 원하는 의존성을 얻을 수 있도록 도와준다.
+* 쉽게 말해서 동적인 파라미터들과 함께 의존성 주입을 할 수 있다.
+* (예를들어 SavedState 정보나 고유ID값 등, WorkManager에서도 @Assisted 을 사용한다.
+* WorkerParameters와 context 의 동적인 전달을 받기 위해서이다.
+* https://dagger.dev/dev-guide/assisted-injection.html
+* https://proandroiddev.com/whats-new-in-hilt-and-dagger-2-31-c46b7abbc64a
+* https://www.charlezz.com/?p=44184
+*
+* */
 /**
  * The ViewModel used in [PlantDetailFragment].
  */
