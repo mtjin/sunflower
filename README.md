@@ -1,7 +1,7 @@
 Android Sunflower
 =================
 
-스터디 정리 : https://youngest-programming.tistory.com/manage/newpost/524?type=post&returnURL=https%3A%2F%2Fyoungest-programming.tistory.com%2F524
+스터디 정리 : https://youngest-programming.tistory.com/524
 
 A gardening app illustrating Android development best practices with Android Jetpack.
 
