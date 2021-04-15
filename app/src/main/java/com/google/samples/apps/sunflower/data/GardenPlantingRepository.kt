@@ -19,9 +19,10 @@ package com.google.samples.apps.sunflower.data
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/*@Singleton으로 어디서나 동일한 객체를 제공합니다*/
 @Singleton
 class GardenPlantingRepository @Inject constructor(
-    private val gardenPlantingDao: GardenPlantingDao
+        private val gardenPlantingDao: GardenPlantingDao
 ) {
 
     suspend fun createGardenPlanting(plantId: String) {
@@ -34,7 +35,7 @@ class GardenPlantingRepository @Inject constructor(
     }
 
     fun isPlanted(plantId: String) =
-        gardenPlantingDao.isPlanted(plantId)
+            gardenPlantingDao.isPlanted(plantId)
 
     fun getPlantedGardens() = gardenPlantingDao.getPlantedGardens()
 }

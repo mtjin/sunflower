@@ -23,12 +23,13 @@ import com.google.samples.apps.sunflower.api.UnsplashService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+/*NetworkModule 에서 @Singleton*/
 class UnsplashRepository @Inject constructor(private val service: UnsplashService) {
 
     fun getSearchResultStream(query: String): Flow<PagingData<UnsplashPhoto>> {
         return Pager(
-            config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
-            pagingSourceFactory = { UnsplashPagingSource(service, query) }
+                config = PagingConfig(enablePlaceholders = false, pageSize = NETWORK_PAGE_SIZE),
+                pagingSourceFactory = { UnsplashPagingSource(service, query) }
         ).flow
     }
 
