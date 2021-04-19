@@ -45,6 +45,7 @@ class HomeViewPagerFragment : Fragment() {
         viewPager.adapter = SunflowerPagerAdapter(this)
 
         // 탭 레이아웃 아이콘 및 텍스트 세팅 (TabLayoutMediator 는 처음 봤다.)
+        // https://developer.android.com/training/animation/vp2-migration?hl=ko#tablayout 와 연계된다.
         // Set the icon and text for each tab
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
