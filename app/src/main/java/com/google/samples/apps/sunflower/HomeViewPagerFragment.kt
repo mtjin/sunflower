@@ -33,27 +33,33 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeViewPagerFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
+        // 데이터바인딩 세팅
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
-
+        // 뷰페이저 어댑터 세팅
         viewPager.adapter = SunflowerPagerAdapter(this)
 
+        // 탭 레이아웃 아이콘 및 텍스트 세팅 (TabLayoutMediator 는 처음 봤다.)
         // Set the icon and text for each tab
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
         }.attach()
 
+        // 툴바 세팅
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
+        // 데이터바인딩과 초기화 작업을 한후 데이터바인딩 클래스에는 상응하는 레이아웃 파일의
+        // 루트 뷰에 관한 직접 참조를 제공하는 binding.root 를 반환해준다.
         return binding.root
     }
 
+    // 아이콘 리소스 가져오기
     private fun getTabIcon(position: Int): Int {
         return when (position) {
             MY_GARDEN_PAGE_INDEX -> R.drawable.garden_tab_selector
@@ -62,6 +68,7 @@ class HomeViewPagerFragment : Fragment() {
         }
     }
 
+    // 타이틀 텍스트 가져오기
     private fun getTabTitle(position: Int): String? {
         return when (position) {
             MY_GARDEN_PAGE_INDEX -> getString(R.string.my_garden_title)
