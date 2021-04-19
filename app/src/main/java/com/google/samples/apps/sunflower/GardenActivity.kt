@@ -35,6 +35,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class GardenActivity : AppCompatActivity() {
 
+    //먼저 SPA(Single-Page-Application) 구조인 이 프로젝트에서 유일한 액티비티인 GardenActivity이다.
+    //네비게이션 Host로 프래그먼트의 껍데기 역할을 담당해서 별다른 로직은 없다.
+    //XML에서는 Jetpack Navigation을 활용하기 위한 옵션들을 갖고있고 FragmetContainerView 레이아웃으로 프래그먼트를 담게 된다.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView<ActivityGardenBinding>(this, R.layout.activity_garden)
