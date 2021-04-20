@@ -27,6 +27,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+// @InstallIn 을 지정하여 각 모듈을 사용하거나 설치할 Android 클래스를 Hilt 에 알려야한다.
 @InstallIn(SingletonComponent::class)
 @Module
 class DatabaseModule {
