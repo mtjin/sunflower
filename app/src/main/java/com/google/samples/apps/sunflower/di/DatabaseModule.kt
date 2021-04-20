@@ -31,6 +31,7 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule {
 
+    /*데이터베이스만 Singleton이고 Dao 주입은 아니다. */
     @Singleton
     @Provides
     fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {

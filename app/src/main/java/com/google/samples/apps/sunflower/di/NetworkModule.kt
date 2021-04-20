@@ -27,6 +27,7 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
 
+    /*API Interface @Singleton*/
     @Singleton
     @Provides
     fun provideUnsplashService(): UnsplashService {
